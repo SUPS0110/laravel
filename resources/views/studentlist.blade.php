@@ -5,6 +5,8 @@
     <tr>
       <th scope="col">SN</th>
       <th scope="col">NAME</th>
+      <th scope="col">GENDER</th>
+
       <th scope="col">EMAIL</th>
       <th scope="col">PHONE</th>
       <th scope="col">ADDRESS</th>
@@ -19,6 +21,7 @@
       <tr>
         <th scope="row">{{$i++}}</th>
       <td>{{$std->Name}}</td>
+      <td>{{$std->Gender}}</td>
       <td>{{$std->Email}}</td>
       <td>{{$std->Phone}}</td>
       <td><textarea>{{$std->Address}}</textarea></td>
@@ -42,6 +45,26 @@
         <label for="name" class="form-label">Name</label>
         <input type="text" name="name" value="{{$std->Name}}" aria-describedby="emailHelp">
       </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label><br>
+        @if($std->Gender=="Female")
+        <input type="radio" value="{{$std->Gender}}" name="gender" checked  aria-describedby="emailHelp" >Female
+        <input type="radio" value="{{$std->Gender}}"name="gender"  aria-describedby="emailHelp" >Male
+        <input type="radio" value="{{$std->Gender}}"name="gender"  aria-describedby="emailHelp" >Others
+        
+        @elseif($std->Gender=="Male")
+          <input type="radio" value="Female" name="gender"   aria-describedby="emailHelp" >Female
+        <input type="radio" value="Male"name="gender" checked aria-describedby="emailHelp" >Male
+        <input type="radio" value="Others"name="gender"  aria-describedby="emailHelp" >Others
+      
+        @else
+          <input type="radio" value="Female" name="gender"  aria-describedby="emailHelp" >Female
+        <input type="radio" value="Male"name="gender"  aria-describedby="emailHelp" >Male
+        <input type="radio" value="Others"name="gender" checked  aria-describedby="emailHelp" >Others
+        @endif
+
+        
+      </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input type="email" name="email" value="{{$std->Email}}" class="form-control" aria-describedby="emailHelp">
@@ -62,7 +85,7 @@
     </div>
   </div>
 </div>
-        <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+        <a href="{{route('delete',$std->id)}}" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></a>
 
       </td>
     </tr>

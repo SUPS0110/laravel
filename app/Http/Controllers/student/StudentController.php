@@ -21,6 +21,8 @@ class studentcontroller extends Controller
     {
         $student= new student(); 
         $student->Name= $request->name;
+        $student->Gender= $request->gender;
+
         $student->Email= $request->email;
         $student->Phone= $request->phone;
         $student->Address= $request->address;
@@ -30,10 +32,16 @@ class studentcontroller extends Controller
     public function update(Request $request,student $id)
     {
         $id->Name= $request->name;
+        $id->Gender= $request->gender;
         $id->Email= $request->email;
         $id->Phone= $request->phone;
         $id->Address= $request->address;
        $id->save();
        return back();
+    }
+    public function delete( student $id){
+        $id->delete();
+        return back();
+
     }
 }

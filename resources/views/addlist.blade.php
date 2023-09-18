@@ -4,7 +4,13 @@
     <div class="col-4 mx-auto card p-3 m-3">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" name="name"class="form-control"  aria-describedby="emailHelp" placeholder="Enter your email">
+        <input type="text" name="name"class="form-control"  aria-describedby="emailHelp" placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label><br>
+        <input type="radio" name="gender" value="Female" aria-describedby="emailHelp" >Female
+        <input type="radio" name="gender" value="Male"  aria-describedby="emailHelp" >Male
+        <input type="radio" name="gender"value="Others"  aria-describedby="emailHelp" >Others
       </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
