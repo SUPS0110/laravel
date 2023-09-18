@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('/addlist', [StudentController::class, 'add'])->name('add');
 Route::get('/studentlist',[StudentController::class,'list'])->name('list');
 Route::post('/storedata',[StudentController::class,'store'])->name('store');
+Route::patch('/update/{id}',[StudentController::class,'update'])->name('std.update');

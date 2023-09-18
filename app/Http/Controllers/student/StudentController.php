@@ -27,4 +27,13 @@ class studentcontroller extends Controller
        $student->save();
        return back();
     }
+    public function update(Request $request,student $id)
+    {
+        $id->Name= $request->name;
+        $id->Email= $request->email;
+        $id->Phone= $request->phone;
+        $id->Address= $request->address;
+       $id->save();
+       return back();
+    }
 }
